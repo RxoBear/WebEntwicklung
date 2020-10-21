@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE faces-config>
+
+<!-- ===========================================================================
+  faces-config.xml - JSF 2.3 Konfigurationsdatei
+  Verzeichnis: {Projekt}/WebContent/WEB-INF/
+  Version: 2019-10-21, wkl
+============================================================================ -->
+
+<faces-config version="2.3" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"                            
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee  
+              http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_3.xsd"> 
+
+  <application>
+    
+    <locale-config>
+      <default-locale>de</default-locale>
+      <supported-locale>en</supported-locale>
+    </locale-config>
+    
+  </application>
+  
+</faces-config>
