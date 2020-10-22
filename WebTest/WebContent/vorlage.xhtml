@@ -42,12 +42,19 @@ vorlage.xhtml - Diese Seite können Sie als Vorlage für eigene JSF 2.3-Seiten
   <h:outputText value="#{myBean.date}">
 	  <f:convertDateTime timeZone="MET" locale="de_DE" dateStyle="full" 
 	                     type="both"/>
+	                     
   </h:outputText></p>
-
-  <p>Dies ist eine TEstumgebung für Jan Schneider und Robert Hoch.</p>
-  	  
+  <h:outputText value="#{myBean.text}"> </h:outputText>
+  
+  <p>Dies ist eine Testumgebung für Jan Schneider und Robert Hoch.</p>
+  
+  
+  <p> Count: #{mb.count}</p>
+  
+  <h:commandButton id="id_cmd_cm" value="Click Me"/>
+ 
+  
   <h:commandButton value="Klick mich" onclick="alert( 'Leider ist hier noch kein Feature :(' )"/>
-
   <!--  ==================================================================   -->    
   <hr/><h3>Nützliche Links</h3>
 

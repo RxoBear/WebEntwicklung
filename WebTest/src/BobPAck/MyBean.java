@@ -35,6 +35,7 @@ public class MyBean implements Serializable {
   public MyBean() {
     System.out.println( "MyBean.<init>..."  );
     System.out.println( (new Date()).toString() );
+    
   }
   
   @PostConstruct
@@ -49,4 +50,6 @@ public class MyBean implements Serializable {
   } 
   
   public Date getDate() { return new Date(); }
+  
+  public String getText() { return " Wenn du mehr wissen willst, schreibe mir!"; }
 }
