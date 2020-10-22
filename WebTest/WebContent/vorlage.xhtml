@@ -55,6 +55,72 @@ vorlage.xhtml - Diese Seite können Sie als Vorlage für eigene JSF 2.3-Seiten
  
   
   <h:commandButton value="Klick mich" onclick="alert( 'Leider ist hier noch kein Feature :(' )"/>
+  
+  <!--  ==================================================================   -->
+  <!--  ==================================================================   -->
+  <h3>Dieser einfache Barwertrechner ermittelt den abgezinsten Barwert eines 
+      nach n Jahren anfallenden Zahlungsflusses</h3>
+                    
+  <f:event type="preRenderView"  listener="#{myBarwert.preRenderAction }"/>
+  <f:event type="postRenderView" listener="#{myBarwert.postRenderAction}"/>
+         
+  <h:form>    
+   <h:panelGrid columns="2">  
+     <h:panelGrid columns="2">  
+            
+       <f:facet name="header">
+          <h:messages globalOnly="false"    showDetail="true" showSummary="true" 
+                      infoClass="msgInfo"   warnClass="msgWarning"
+                      errorClass="msgError" fatalClass="msgFatal"/></f:facet>             
+       <f:facet name="footer">
+           <br/><h:commandButton id="id_go" value="Barwert berechnen"
+                                 actionListener="#{myBarwert.berechneBarwert}"/>               
+        </f:facet>
+      
+        Künftiger Zahlungsfluss &#160; 
+        <h:inputText label="Künftiger Zahlungsfluss" value="#{myBarwert.k}"
+                     required="true"
+                     requiredMessage="Bitte positiven Betrag angeben">
+          <f:convertNumber locale="#{myBarwert.locale}"     
+                           minFractionDigits="2" maxFractionDigits="2"/>
+          <f:validateDoubleRange minimum="0.0"/>
+        </h:inputText>
+          
+        <!-- Achtung: Die Zeichenkette in requiredMessage darf keinen 
+            Zeilenumbruch enthalten! -->
+        Jahre &#160;
+        <h:inputText label="Jahre" value="#{myBarwert.n}" required="true" 
+                     requiredMessage=
+                     "Nach wie vielen Jahren erfolgt die Zahlung?"
+                     converter="javax.faces.Integer">
+         <f:validateLongRange minimum="1"/>       
+        </h:inputText>
+      
+        Zinssatz (in %) &#160;
+        <h:inputText label="Zinssatz" value="#{myBarwert.z}" required="true"
+                     requiredMessage="Bitte Zinssatz angeben"> 
+            <f:convertNumber locale="#{myBarwert.locale}"/>
+            <f:validateDoubleRange minimum="0.0"/>
+        </h:inputText>
+                    
+        <h:outputText value="Barwert: "
+                        style="font-size:larger; font-weight:bold;"/>
+        <h:outputText value="#{myBarwert.b}"
+                        style="font-size:larger; font-weight:bold;">
+          <f:convertNumber type="currency"      maxFractionDigits="2" 
+                           currencySymbol = "€" minFractionDigits="2"
+                           locale="#{myBarwert.locale}"/>
+        </h:outputText>  
+  
+    </h:panelGrid>  
+    
+     <h:graphicImage value="#{myBarwert.imgMoney}" title="Money" alt="Money"/>
+    </h:panelGrid>   
+                      
+  </h:form>
+  
+  
+  <!--  ==================================================================   -->
   <!--  ==================================================================   -->    
   <hr/><h3>Nützliche Links</h3>
 

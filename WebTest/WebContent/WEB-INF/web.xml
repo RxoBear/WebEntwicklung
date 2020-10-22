@@ -12,13 +12,11 @@
                             http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" 
                             id="WebApp_ID" version="4.0">
                                                    
-  <display-name>JSF 2.3 Vorlage, Last update: 2020-01-18</display-name>
-  <description>Dient als Vorlage (Template) für weitere JSF 2.3
-               (MyFaces) Anwendungen in Eclipse
+  <display-name>JSF 2.3 Vorlage</display-name>
+  <description>Hat noch keine Beschreibung.
   </description>
   
   <welcome-file-list>
-    <welcome-file>vorlage.xhtml</welcome-file>
     <welcome-file>index.html</welcome-file>
   </welcome-file-list>
   
