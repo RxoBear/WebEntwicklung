@@ -58,10 +58,12 @@ vorlage.xhtml - Diese Seite können Sie als Vorlage für eigene JSF 2.3-Seiten
   
   <!--  ==================================================================   -->
   <!--  ==================================================================   -->
-  <h3>Dieser einfache Barwertrechner ermittelt den abgezinsten Barwert eines 
-      nach n Jahren anfallenden Zahlungsflusses</h3>
+
+   <h5>Dieser einfache Barwertrechner ermittelt den abgezinsten Barwert eines 
+      nach n Jahren anfallenden Zahlungsflusses</h5>
+      
                     
-  <f:event type="preRenderView"  listener="#{myBarwert.preRenderAction }"/>
+  <f:event type="preRenderView"  listener="#{myBarwert.preRenderAction}"/>
   <f:event type="postRenderView" listener="#{myBarwert.postRenderAction}"/>
          
   <h:form>    
@@ -73,7 +75,7 @@ vorlage.xhtml - Diese Seite können Sie als Vorlage für eigene JSF 2.3-Seiten
                       infoClass="msgInfo"   warnClass="msgWarning"
                       errorClass="msgError" fatalClass="msgFatal"/></f:facet>             
        <f:facet name="footer">
-           <br/><h:commandButton id="id_go" value="Barwert berechnen"
+           <br/><h:commandButton styleClass="marinBottom" id="id_go" value="Barwert berechnen"
                                  actionListener="#{myBarwert.berechneBarwert}"/>               
         </f:facet>
       
@@ -83,11 +85,12 @@ vorlage.xhtml - Diese Seite können Sie als Vorlage für eigene JSF 2.3-Seiten
                      requiredMessage="Bitte positiven Betrag angeben">
           <f:convertNumber locale="#{myBarwert.locale}"     
                            minFractionDigits="2" maxFractionDigits="2"/>
-          <f:validateDoubleRange minimum="0.0"/>
+          <f:validateDoubleRange minimum="0.01"/>
         </h:inputText>
           
         <!-- Achtung: Die Zeichenkette in requiredMessage darf keinen 
             Zeilenumbruch enthalten! -->
+            
         Jahre &#160;
         <h:inputText label="Jahre" value="#{myBarwert.n}" required="true" 
                      requiredMessage=
@@ -95,27 +98,67 @@ vorlage.xhtml - Diese Seite können Sie als Vorlage für eigene JSF 2.3-Seiten
                      converter="javax.faces.Integer">
          <f:validateLongRange minimum="1"/>       
         </h:inputText>
+        
+       
       
         Zinssatz (in %) &#160;
         <h:inputText label="Zinssatz" value="#{myBarwert.z}" required="true"
                      requiredMessage="Bitte Zinssatz angeben"> 
             <f:convertNumber locale="#{myBarwert.locale}"/>
             <f:validateDoubleRange minimum="0.0"/>
-        </h:inputText>
-                    
-        <h:outputText value="Barwert: "
-                        style="font-size:larger; font-weight:bold;"/>
-        <h:outputText value="#{myBarwert.b}"
-                        style="font-size:larger; font-weight:bold;">
-          <f:convertNumber type="currency"      maxFractionDigits="2" 
-                           currencySymbol = "€" minFractionDigits="2"
-                           locale="#{myBarwert.locale}"/>
+        </h:inputText>  
+              
+        <h:outputText value="Barwert: " style="font-size:larger; font-weight:bold;"/>    
+        
+       	<h:outputText value=" Bobby war hier :)" style="font-size:Larger"/>
+                  
+        <h:outputText value="#{myBarwert.b}" style="font-size:larger; font-weight:bold;">
+        	<f:convertNumber type="currency" maxFractionDigits="2" currencySymbol = "€" minFractionDigits="2" locale="#{myBarwert.locale}"/>
         </h:outputText>  
   
     </h:panelGrid>  
     
      <h:graphicImage value="#{myBarwert.imgMoney}" title="Money" alt="Money"/>
     </h:panelGrid>   
+    
+    
+   
+   <h:panelGrid id = "panel" columns = "2" border = "1"
+      cellpadding = "10" cellspacing = "1">
+      
+
+	   
+	   <f:facet  name = "header">
+	   		<h:panelGroup styleClass="centeredHeader" >
+	      		<h:outputText  value = "Login"/>
+	      	</h:panelGroup>
+	   </f:facet> 
+	   
+
+	   
+	   <h:outputLabel value = "Username" />
+	   
+	   <h:inputText/>
+	   
+
+	   <h:outputLabel value = "Password" />
+	   
+	   <h:inputSecret />
+	   
+	   <f:facet name = "footer">
+	      <h:panelGroup style = "display:block; text-align:center">
+	         <h:commandButton id = "submit" value = "Submit" />
+	      </h:panelGroup>
+	   </f:facet>
+	</h:panelGrid>
+   
+   
+   
+   
+   
+   
+   
+   
                       
   </h:form>
   

@@ -6,6 +6,12 @@
 * Successfully checked with http://jigsaw.w3.org/css-validator/
 *******************************************************************************/
 
+.marinBottom {
+	
+	margin-bottom: 50px;
+}
+
+
 .flagge_de {
 background: url( ../resources/img/flagge_de_30_19.jpg ) !important; 
 height: 19px;
@@ -101,6 +107,14 @@ img.csslogo {
   margin-left: 5px
 }
 
+.centeredHeader {
+  display:block;
+  text-align:center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 130%;
+  color: #336699;
+}
+
 .fortune{
   color:  White;
   /* background-color: #66ccff; */
@@ -112,7 +126,7 @@ img.csslogo {
 .h2 {
   font-family: Arial, Helvetica, sans-serif;
   font-size:130%;
-  color:#336699;
+  color:#ff8040;
   border : solid #cccc99;
   border-width : 0px 0px 2px 0px;
   width : 100%;
@@ -125,6 +139,8 @@ img.csslogo {
   color:#336699;
   width : 100%; 
 }
+
+
 
 .loginbox{
   /*background-color: rgb(231,231,231);
@@ -223,6 +239,15 @@ H4 {
   font-size:92%;
   color:#000000;
       font-weight: bold;
+  width : 100%;
+}
+
+h5 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:130%;
+  color:#ff8040;
+  border : solid #cccc99;
+  border-width : 0px 0px 2px 0px;
   width : 100%;
 }
 

@@ -25,6 +25,7 @@ public class MyBarwert implements Serializable {
   
   private double k = 100.0, b = 87.06, z = 2.0; //Kapital, Barwert und Zins in %
   private int n = 7; // Jahre
+
   private String imgMoney = IMG_0;
   private int imgCounter = 0;
   private Locale locale = DEFAULT_LOCALE;
@@ -59,6 +60,8 @@ public class MyBarwert implements Serializable {
 
   public int getN() { return n; }
   public void setN( int n ) { this.n = n; }  
+  
+
   
   public String getImgMoney() { 
     
