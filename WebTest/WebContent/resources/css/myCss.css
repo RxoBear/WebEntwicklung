@@ -6,6 +6,20 @@
 * Successfully checked with http://jigsaw.w3.org/css-validator/
 *******************************************************************************/
 
+
+.test{
+			background-color: red;
+	
+		
+}
+
+.loginClass{
+	
+	margin: auto;
+}
+
+
+
 .marinBottom {
 	
 	margin-bottom: 50px;

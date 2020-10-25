@@ -17,7 +17,22 @@ vorlage.xhtml - Diese Seite können Sie als Vorlage für eigene JSF 2.3-Seiten
 </h:head>
 
 <h:body><h:form>
-  
+  <!--  ==================================================================   -->
+
+
+
+<h:panelGroup layout="block" styleClass="test">
+
+<a>Hallo</a>
+
+</h:panelGroup>
+
+
+
+  <!--  ==================================================================   -->
+
+
+
   <a href="https://myfaces.apache.org/">
     <h:graphicImage library="img" name="jsf-logo.png" styleClass="csslogo" 
                                                        alt="JSF"/>
@@ -26,9 +41,9 @@ vorlage.xhtml - Diese Seite können Sie als Vorlage für eigene JSF 2.3-Seiten
   </a>
   
   <h:panelGrid columns="2">
-  <h:graphicImage library="img" name="java.png" alt="Logo"/>
-  <h:outputText value="Java Server Faces 2.3: Vorlage"
-                styleClass="branding" /></h:panelGrid>   
+  	<h:graphicImage library="img" name="java.png" alt="Logo"/>
+  	<h:outputText value="Java Server Faces 2.3: Vorlage" styleClass="branding" />
+  </h:panelGrid>   
   <!--  ==================================================================   -->
    
   <h:messages globalOnly="false"    showDetail="true" showSummary="true" 
@@ -45,6 +60,46 @@ vorlage.xhtml - Diese Seite können Sie als Vorlage für eigene JSF 2.3-Seiten
 	                     
   </h:outputText></p>
   <h:outputText value="#{myBean.text}"> </h:outputText>
+  
+    <!--  ==================================================================   -->
+    <!--  ==================================================================   -->
+    <!--  ==================================================================   -->
+
+	<h2>Car Details</h2>
+	<h:dataTable value="#{carBean.cars}" var="car" border="2">
+		<h:column>
+			<f:facet name="header">ID</f:facet>
+         #{car.cid}
+      </h:column>
+		<h:column>
+			<f:facet name="header">Name</f:facet>
+         #{car.cname}
+      </h:column>
+		<h:column>
+			<f:facet name="header">Tel.</f:facet>
+           #{car.color}
+       </h:column>
+		<h:column>
+			<f:facet name="header">Anschrift</f:facet>
+           #{car.speed}
+       </h:column>
+		<h:column>
+			<f:facet name="header">Erreichbarkeit</f:facet>
+           #{car.mfdctry}
+       </h:column>
+       	<h:column>
+			<f:facet name="header">Photo</f:facet>
+			<h:graphicImage value="#{car.picture}" width="90" alt="hier sollte ein Bild erscheinen."/>  <!--  anstatt <img src="#{car.picture}"/> --> 
+            
+       </h:column>
+	</h:dataTable>
+
+    
+
+                     
+    <!--  ==================================================================   -->
+    <!--  ==================================================================   -->
+    <!--  ==================================================================   -->
   
   <p>Dies ist eine Testumgebung für Jan Schneider und Robert Hoch.</p>
   
@@ -66,7 +121,7 @@ vorlage.xhtml - Diese Seite können Sie als Vorlage für eigene JSF 2.3-Seiten
   <f:event type="preRenderView"  listener="#{myBarwert.preRenderAction}"/>
   <f:event type="postRenderView" listener="#{myBarwert.postRenderAction}"/>
          
-  <h:form>    
+    
    <h:panelGrid columns="2">  
      <h:panelGrid columns="2">  
             
@@ -121,9 +176,11 @@ vorlage.xhtml - Diese Seite können Sie als Vorlage für eigene JSF 2.3-Seiten
      <h:graphicImage value="#{myBarwert.imgMoney}" title="Money" alt="Money"/>
     </h:panelGrid>   
     
+      <!--  ==================================================================   -->
+      <!--  ==================================================================   -->
     
    
-   <h:panelGrid id = "panel" columns = "2" border = "1"
+   <h:panelGrid styleClass="loginClass" id = "panel" columns = "2" border = "1"
       cellpadding = "10" cellspacing = "1">
       
 
@@ -153,6 +210,8 @@ vorlage.xhtml - Diese Seite können Sie als Vorlage für eigene JSF 2.3-Seiten
 	</h:panelGrid>
    
    
+     <!--  ==================================================================   -->
+     <!--  ==================================================================   -->
    
    
    
@@ -160,7 +219,7 @@ vorlage.xhtml - Diese Seite können Sie als Vorlage für eigene JSF 2.3-Seiten
    
    
                       
-  </h:form>
+ 
   
   
   <!--  ==================================================================   -->
