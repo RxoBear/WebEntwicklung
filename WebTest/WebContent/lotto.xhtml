@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+
+<!-- ===========================================================================
+vorlage.xhtml - Diese Seite können Sie als Vorlage für eigene JSF 2.3-Seiten 
+                verwenden. Damit ist ein einheitlicher Aufbau gewährleistet.                
+============================================================================ -->
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	    xmlns:f="http://xmlns.jcp.org/jsf/core"
+	    xmlns:h="http://xmlns.jcp.org/jsf/html">
+ 
+<h:head>
+  <h:outputStylesheet library="css" name="myCss.css"/>  
+  <title>JSF Lotto</title>
+  <meta charset="utf-8"/>
+</h:head>
+
+<h:body><h:form>
+  <!--  ==================================================================   -->
+  <!--  ==================================================================   -->
+  <a href="https://myfaces.apache.org/">
+    <h:graphicImage library="img" name="jsf-logo.png" styleClass="csslogo" 
+                                                       alt="JSF"/>
+    <!--  Alternativ zu h:graphicImage sollte auch gehen:
+          <img class="csslogo" src="resources/img/jsf-logo.png" alt="JSF"/> -->
+  </a>
+   <!--  ==================================================================   -->
+   <!--  ==================================================================   -->
+ 
+   
+   <h2>Die Lottozahlen:</h2>
+   
+   <h:panelGrid columns="6">
+   	
+   	<h:graphicImage library="img" name="lotto_#{myBean.zahl[0]}.jpg"/>
+   	<h:graphicImage library="img" name="lotto_#{myBean.zahl[1]}.jpg"/>
+   	<h:graphicImage library="img" name="lotto_#{myBean.zahl[2]}.jpg"/>
+   	<h:graphicImage library="img" name="lotto_#{myBean.zahl[3]}.jpg"/>
+   	<h:graphicImage library="img" name="lotto_#{myBean.zahl[4]}.jpg"/>
+   	<h:graphicImage library="img" name="lotto_#{myBean.zahl[5]}.jpg"/>
+   	
+
+   </h:panelGrid>        
+   
+   
+   <h:commandButton id="MeinButton" value="Klick mich" actionListener="#{myBean.neueZahlen}"/>     
+ 
+  
+  
+  <!--  ==================================================================   -->
+  <!--  ==================================================================   -->    
+  <hr/><h3>Nützliche Links</h3>
+
+  <ul>
+    <li><a href="https://www.google.com/">Google.com</a></li> 
+  </ul>
+  
+  <hr/><a href="https://jigsaw.w3.org/css-validator/">
+       <img class="csslogo" src="https://jigsaw.w3.org/css-validator/images/vcss"
+            alt="Valid CSS!" height="31" width="88"/></a>
+	<p><small>Rel. 2020-01-18</small></p>
+	
+</h:form></h:body>
+</html>

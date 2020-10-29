@@ -11,8 +11,10 @@ import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 import com.mysql.cj.jdbc.Blob;
 
@@ -21,8 +23,6 @@ import com.mysql.cj.jdbc.Blob;
 
 @ManagedBean
 @SessionScoped
-
-
 public class CarBean implements Serializable {
 
 	private static final long serialVersionUID = 6081417964063918994L;
@@ -83,7 +83,10 @@ public class CarBean implements Serializable {
 		connect.close();
 
 		return cars;
+		
+		
+		
 
 	}
-
+	
 }

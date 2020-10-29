@@ -6,11 +6,15 @@
 package BobPAck;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
+import java.util.stream.IntStream;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.event.ActionEvent;
 import javax.inject.Named;
 
 
@@ -32,16 +36,40 @@ import static javax.faces.annotation.FacesConfig.Version.JSF_2_3;
 @RequestScoped
 public class MyBean implements Serializable {
 	
+	
+	
 	private String name = "";
+	
+	private int[] zahl = new int[6];
 	
 	private static final long serialVersionUID = 1L;
     
   public MyBean() {
     System.out.println( "MyBean.<init>..."  );
     System.out.println( (new Date()).toString() );
+    generator();
     
   }
   
+  
+  public void neueZahlen(ActionEvent ae) {
+	  
+	  generator();
+	  
+  }
+  
+  public void generator() {
+	  
+
+	  Random randomGenerator = new Random();
+	  for(int i = 0; i < 6; i++) {
+		  
+		  int neueZahl = randomGenerator.nextInt(49)+1;
+
+		  zahl[i] = neueZahl;
+  
+	  }  
+  }
 
   
   @PostConstruct
@@ -61,4 +89,12 @@ public class MyBean implements Serializable {
   public Date getDate() { return new Date(); }
   
   public String getText() { return " Wenn du mehr wissen willst, schreibe mir!"; }
+  
+  
+  public int[] getZahl() {
+
+	  
+	  return zahl;
+
+  }
 }

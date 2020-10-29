@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+
+<!-- ===========================================================================
+vorlage.xhtml - Diese Seite können Sie als Vorlage für eigene JSF 2.3-Seiten 
+                verwenden. Damit ist ein einheitlicher Aufbau gewährleistet.                
+============================================================================ -->
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	    xmlns:f="http://xmlns.jcp.org/jsf/core"
+	    xmlns:h="http://xmlns.jcp.org/jsf/html">
+ 
+<h:head>
+  <h:outputStylesheet library="css" name="myCss.css"/>  
+  <title>Hauptseite - ImmobilienVErwaltung</title>
+  <meta charset="utf-8"/>
+</h:head>
+
+<h:body styleClass="wrapper"><h:form>
+
+
+	<h2>Immobilien Liste</h2>
+	<h:dataTable value="#{carBean.cars}" var="car" border="2" editable="true" style="margin-bottom:20px">
+		<h:column>
+			<f:facet name="header">ID</f:facet>
+         #{car.cid}
+      </h:column>
+		<h:column>
+			<f:facet name="header">Name</f:facet>
+         #{car.cname}
+      </h:column>
+		<h:column>
+			<f:facet name="header">Tel.</f:facet>
+           #{car.color}
+       </h:column>
+		<h:column>
+			<f:facet name="header">Anschrift</f:facet>
+           #{car.speed}
+       </h:column>
+		<h:column>
+			<f:facet name="header">Erreichbarkeit</f:facet>
+           #{car.mfdctry}
+       </h:column>
+       	<h:column>
+			<f:facet name="header">Photo</f:facet>
+			<h:graphicImage value="#{car.picture}" width="90" alt="hier sollte ein Bild erscheinen."/>  <!--  anstatt <img src="#{car.picture}"/> --> 
+            
+       </h:column>
+	</h:dataTable>
+	
+	<!-- ########################################################################### https://subscription.packtpub.com/book/web_development/9781783280698/8/ch08lvl1sec168/displaying-data-in-the-grid-layout-using-the-datagrid-component-->
+	
+
+
+	
+</h:form></h:body>
+</html>

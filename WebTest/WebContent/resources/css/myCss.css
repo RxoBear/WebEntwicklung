@@ -7,6 +7,14 @@
 *******************************************************************************/
 
 
+.wrapper{
+	
+	width: 960px;
+	max-width: 90%;
+	
+	margin: 0 auto;
+}
+
 .test{
 			background-color: red;
 	
